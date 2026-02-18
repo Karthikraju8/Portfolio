@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Karthik Raju | Software Engineer & Cloud Architect</title>
+    <meta name="description" content="Portfolio of K Karthik Raju - Software Engineer specializing in AWS Cloud Infrastructure, Full-Stack Development, and Project Management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SVG Filters -->
+    <svg style="position:absolute;width:0;height:0">
+        <filter id="noise-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+    </svg>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45"/>
+                </svg>
+            </div>
+            <div class="preloader-text" id="preloader-text"></div>
+            <div class="preloader-sub">PORTFOLIO</div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="side-nav">
+        <a href="#hero" class="nav-dot active" data-label="Home"><span></span></a>
+        <a href="#about" class="nav-dot" data-label="About"><span></span></a>
+        <a href="#skills" class="nav-dot" data-label="Skills"><span></span></a>
+        <a href="#experience" class="nav-dot" data-label="Experience"><span></span></a>
+        <a href="#education" class="nav-dot" data-label="Education"><span></span></a>
+        <a href="#contact" class="nav-dot" data-label="Contact"><span></span></a>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="section hero-section">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-ambient">
+            <div class="ambient-orb orb-1"></div>
+            <div class="ambient-orb orb-2"></div>
+            <div class="ambient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="hero-tag-line"></span>
+                <span class="hero-tag-text">SOFTWARE ENGINEER</span>
+                <span class="hero-tag-line"></span>
+            </div>
+            <h1 class="hero-name" id="hero-name">K Karthik<br>Raju<span class="accent-dot">.</span></h1>
+            <div class="hero-title-wrapper">
+                <span class="hero-prefix">&gt;</span>
+                <span class="hero-typewriter" id="typewriter"></span>
+                <span class="typewriter-cursor">_</span>
+            </div>
+            <p class="hero-description">
+                Crafting scalable cloud solutions &amp; bridging the gap between<br>
+                technical excellence and client-focused innovation.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary magnetic">
+                    <span class="btn-text">Get In Touch</span>
+                    <span class="btn-shine"></span>
+                </a>
+                <a href="#experience" class="btn btn-outline magnetic">
+                    <span class="btn-text">View My Work</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Years<br>Experience</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99.9">0</span>
+                    <span class="stat-suffix">%</span>
+                    <span class="stat-label">System<br>Uptime</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Certified<br>Skills</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="reveal-text">Performance-driven Junior Software Engineer with over <strong>2 years of experience</strong> in Cloud Infrastructure (AWS), full-stack development, and Project Management.</p>
+                    <p class="reveal-text">Proven track record of <strong>optimizing cloud resource utilization</strong> and streamlining application deployment and cross-functional collaboration.</p>
+                    <p class="reveal-text">Expert in bridging the gap between <strong>technical requirements</strong> and client-focused solutions, ensuring 99.9% system uptime for high-availability deployments.</p>
+                </div>
+                <div class="about-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-filename">karthik.config.js</span>
+                        </div>
+                        <div class="code-body">
+                            <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="vr">engineer</span> = {</div>
+                            <div class="code-line"><span class="ln">2</span>  <span class="pr">name</span>: <span class="st">"K Karthik Raju"</span>,</div>
+                            <div class="code-line"><span class="ln">3</span>  <span class="pr">location</span>: <span class="st">"Bengaluru, IN"</span>,</div>
+                            <div class="code-line"><span class="ln">4</span>  <span class="pr">education</span>: <span class="st">"MTech CSE @ MIT"</span>,</div>
+                            <div class="code-line"><span class="ln">5</span>  <span class="pr">focus</span>: [</div>
+                            <div class="code-line"><span class="ln">6</span>    <span class="st">"Cloud Architecture"</span>,</div>
+                            <div class="code-line"><span class="ln">7</span>    <span class="st">"Full-Stack Dev"</span>,</div>
+                            <div class="code-line"><span class="ln">8</span>    <span class="st">"Project Management"</span></div>
+                            <div class="code-line"><span class="ln">9</span>  ],</div>
+                            <div class="code-line"><span class="ln">10</span>  <span class="pr">available</span>: <span class="bl">true</span></div>
+                            <div class="code-line"><span class="ln">11</span>};</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Skills & Arsenal</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-category="cloud">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 0 0 4 4h9a5 5 0 1 0-.9-9.95 7 7 0 0 0-13.1 5.95z"/></svg>
+                        </div>
+                        <h3>Cloud & Platforms</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="chip" data-level="95">EC2</span>
+                        <span class="chip" data-level="90">S3</span>
+                        <span class="chip" data-level="88">RDS</span>
+                        <span class="chip" data-level="85">DynamoDB</span>
+                        <span class="chip" data-level="90">Load Balancing</span>
+                        <span class="chip" data-level="85">Route 53</span>
+                        <span class="chip" data-level="88">Cognito</span>
+                        <span class="chip" data-level="92">IAM</span>
+                        <span class="chip" data-level="87">VPC</span>
+                        <span class="chip" data-level="90">Auto Scaling</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-category="code">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="chip" data-level="90">HTML</span>
+                        <span class="chip" data-level="88">CSS</span>
+                        <span class="chip" data-level="85">Angular</span>
+                        <span class="chip" data-level="82">Node.js</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-category="db">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </div>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="chip" data-level="85">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-category="tools">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <h3>Tools & Practices</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="chip" data-level="90">Git</span>
+                        <span class="chip" data-level="88">GitHub</span>
+                        <span class="chip" data-level="85">Project Management</span>
+                        <span class="chip" data-level="82">Cross-functional Collaboration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certs-section">
+                <h3 class="certs-title">Certifications</h3>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span class="cert-name">Mastering Data Analytics in Excel</span>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span class="cert-name">Design Thinking for Innovation</span>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span class="cert-name">Python for DS & AI & Development</span>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span class="cert-name">Cloud Computing 101</span>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span class="cert-name">Getting Started with Storage AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-line-fill" id="timeline-fill"></div>
+                </div>
+
+                <div class="timeline-entry" data-side="right">
+                    <div class="timeline-dot">
+                        <div class="timeline-pulse"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">
+                            <span class="date-range">June 2024 &mdash; July 2025</span>
+                            <span class="date-badge current">Latest</span>
+                        </div>
+                        <h3 class="timeline-role">Junior Software Engineer</h3>
+                        <h4 class="timeline-company">Softcons INC &mdash; Bengaluru, India</h4>
+                        <ul class="timeline-details">
+                            <li>Architected and maintained scalable cloud infrastructure using AWS (EC2, S3, RDS) to support high-availability application deployment and 99.9% system uptime.</li>
+                            <li>Collaborated with engineering and product teams to translate complex technical requirements into actionable product specifications and roadmaps.</li>
+                            <li>Directed project planning sessions and managed development timelines to ensure on-time release of critical features and product enhancements.</li>
+                            <li>Facilitated technical product demos for stakeholders, integrating user feedback to drive iterative improvements.</li>
+                            <li>Conducted comprehensive competitor product analysis to identify innovation opportunities, leading to new features in the product roadmap.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>AWS</span><span>EC2</span><span>S3</span><span>RDS</span><span>Project Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-entry" data-side="left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">
+                            <span class="date-range">July 2023 &mdash; May 2024</span>
+                        </div>
+                        <h3 class="timeline-role">Intern</h3>
+                        <h4 class="timeline-company">Softcons INC &mdash; Bengaluru, India</h4>
+                        <ul class="timeline-details">
+                            <li>Resolved critical cloud service issues and infrastructure bottlenecks promptly, minimizing downtime during the testing phase.</li>
+                            <li>Partnered with senior developers to configure and maintain virtual machines, private networks, and storage solutions within AWS.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>AWS</span><span>VMs</span><span>VPC</span><span>Cloud Ops</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-card-glow"></div>
+                    <div class="edu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                    </div>
+                    <div class="edu-status pursuing">Currently Pursuing</div>
+                    <h3 class="edu-degree">MTech, Computer Science & Engineering</h3>
+                    <h4 class="edu-school">Manipal Institute of Technology</h4>
+                    <p class="edu-location">Bangalore, India</p>
+                    <div class="edu-year">Expected Graduation: July 2027</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-glow"></div>
+                    <div class="edu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                    </div>
+                    <div class="edu-status completed">Completed</div>
+                    <h3 class="edu-degree">BTech, CS & Information Technology</h3>
+                    <h4 class="edu-school">REVA University</h4>
+                    <p class="edu-location">Bangalore, India</p>
+                    <div class="edu-year">Graduated: August 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-text">
+                    <p class="reveal-text">I'm currently open to new opportunities and exciting projects. Whether you have a question, a proposal, or just want to say hello &mdash; my inbox is always open.</p>
+                </div>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">contact.sh</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> cat contact.json</div>
+                        <div class="terminal-line terminal-output">{</div>
+                        <div class="terminal-line terminal-output">&nbsp;&nbsp;<span class="terminal-key">"email"</span>: <span class="terminal-value">"karthikraju0807@gmail.com"</span>,</div>
+                        <div class="terminal-line terminal-output">&nbsp;&nbsp;<span class="terminal-key">"phone"</span>: <span class="terminal-value">"+91-9036026673"</span>,</div>
+                        <div class="terminal-line terminal-output">&nbsp;&nbsp;<span class="terminal-key">"location"</span>: <span class="terminal-value">"Bengaluru, India"</span>,</div>
+                        <div class="terminal-line terminal-output">&nbsp;&nbsp;<span class="terminal-key">"status"</span>: <span class="terminal-bool">"Open to Opportunities"</span></div>
+                        <div class="terminal-line terminal-output">}</div>
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-blink">_</span></div>
+                    </div>
+                </div>
+                <div class="contact-actions">
+                    <a href="mailto:karthikraju0807@gmail.com" class="btn btn-primary magnetic large">
+                        <span class="btn-text">Say Hello</span>
+                        <span class="btn-shine"></span>
+                    </a>
+                    <a href="tel:+919036026673" class="btn btn-outline magnetic large">
+                        <span class="btn-text">Call Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <div class="footer-content">
+            <p class="footer-text">Designed & Built by <strong>K Karthik Raju</strong></p>
+            <p class="footer-copy">&copy; 2025 &mdash; All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
