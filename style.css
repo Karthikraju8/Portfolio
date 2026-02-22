@@ -322,40 +322,52 @@ body.loaded .mouse-glow{display:block}
     /* Blobs — hide on mobile for performance */
     .blob,.hero-blob-1,.hero-blob-2,.hero-blob-3{display:none}
 
-    /* Hero mobile */
-    .hero-sec{min-height:auto;padding:100px 0 60px}
-    .hero-inner{flex-direction:column;padding:0 20px;gap:30px;text-align:left}
-    .hero-left{max-width:100%}
+    /* ===== HERO MOBILE — clean centered layout ===== */
+    .hero-sec{min-height:100vh;min-height:100dvh;padding:0;display:flex;align-items:center}
+    .hero-inner{flex-direction:column;padding:0 24px;gap:32px;text-align:center;justify-content:center}
+    .hero-left{max-width:100%;display:flex;flex-direction:column;align-items:center}
     .hero-right{width:100%}
-    .hero-stats-col{flex-direction:row;gap:10px;justify-content:flex-start;flex-wrap:wrap}
-    .hero-stat{padding:14px 16px;flex:1;min-width:90px}
-    .hs-num{font-size:1.3rem}
-    .hs-label{font-size:.6rem}
-    .hero-btns{flex-direction:column;align-items:stretch;gap:10px}
-    .btn-mag{width:100%;justify-content:center;padding:14px 28px}
-    .hero-desc{font-size:.9rem;margin-bottom:28px}
-    .hero-line{font-size:clamp(2.5rem,12vw,3.5rem)}
+    .hero-tag{justify-content:center}
+    .hero-name{text-align:center}
+    .hero-line{font-size:clamp(2.8rem,13vw,3.8rem)}
+    .hero-line.stroke .hero-line-inner{-webkit-text-stroke-width:1.5px}
+    .hero-type-wrap{justify-content:center;font-size:.82rem}
+    .hero-desc{text-align:center;font-size:.88rem;margin-bottom:24px;max-width:100%}
+    .hero-desc br{display:none}
+    .hero-btns{flex-direction:row;align-items:center;justify-content:center;gap:12px}
+    .btn-mag{width:auto;padding:14px 28px;font-size:.78rem}
+
+    /* Stats — horizontal row, equal width */
+    .hero-stats-col{flex-direction:row;gap:10px;justify-content:center;width:100%}
+    .hero-stat{padding:16px 12px;flex:1;min-width:0;border-radius:12px}
+    .hs-num{font-size:1.4rem}
+    .hs-label{font-size:.55rem;letter-spacing:.04em}
+
+    /* Hide scroll hint on mobile */
+    .scroll-hint{display:none}
 
     /* About mobile */
     .about-wrap{grid-template-columns:1fr;gap:30px}
 
-    /* Skills mobile — vertical */
-    .hscroll-wrap{overflow:visible}
-    .hscroll-track{display:flex;flex-direction:column;width:100%!important;transform:none!important}
-    .skill-panel{width:100%!important;flex-direction:column;padding:30px 20px;gap:24px;min-height:auto}
-    .sp-grid{grid-template-columns:repeat(3,1fr);gap:14px}
-    .ring-svg{width:65px;height:65px}
-    .sp-ring-wrap{width:65px;height:65px}
-    .sp-icon{width:20px;height:20px}
-    .sp-name{font-size:.65rem}
-    .sp-header{min-width:auto}
-    .sp-num{font-size:2.5rem}
-    .sp-header h3{font-size:1.2rem}
+    /* ===== SKILLS MOBILE — card panels ===== */
+    .skills-sec{padding-bottom:40px}
+    .hscroll-wrap{overflow:visible;padding:0 20px}
+    .hscroll-track{display:flex;flex-direction:column;width:100%!important;transform:none!important;gap:20px}
+    .skill-panel{width:100%!important;flex-direction:column;padding:24px;gap:20px;min-height:auto;background:var(--bg2);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-md)}
+    .sp-header{min-width:auto;display:flex;align-items:center;gap:16px}
+    .sp-num{font-size:1.8rem;line-height:1}
+    .sp-header h3{font-size:1.05rem;margin-top:0}
+    .sp-grid{grid-template-columns:repeat(5,1fr);gap:10px}
+    .ring-svg{width:48px;height:48px}
+    .sp-ring-wrap{width:48px;height:48px}
+    .sp-icon{width:16px;height:16px}
+    .sp-name{font-size:.58rem;margin-top:2px}
     .sp-tool-row{gap:8px}
     .tool-chip{padding:8px 16px;font-size:.72rem}
-    .cert-item{padding:12px 16px}
-    .cert-item span{font-size:.78rem}
-    .skills-sec{padding-bottom:80px}
+    .cert-item{padding:12px 14px;border-radius:10px}
+    .cert-item span{font-size:.75rem}
+    .cert-icon{width:18px;height:18px}
+    .certs-label{font-size:.88rem;margin-bottom:12px}
 
     /* Experience mobile */
     .exp-card-inner{padding:24px 20px}
@@ -377,22 +389,33 @@ body.loaded .mouse-glow{display:block}
 
     /* Marquee mobile */
     .marquee-track span{font-size:.72rem;padding:0 12px}
-    .scroll-hint{bottom:20px}
 }
 @media(max-width:480px){
     .hero-line{font-size:clamp(2rem,11vw,2.8rem)}
-    .hero-sec{padding:80px 0 40px}
-    .sp-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-    .ring-svg{width:55px;height:55px}
-    .sp-ring-wrap{width:55px;height:55px}
-    .sp-icon{width:18px;height:18px}
-    .sec-head{flex-direction:column;align-items:flex-start;gap:10px}
-    .sec-line{width:100%}
+    .hero-inner{padding:0 16px;gap:24px}
+    .hero-desc{font-size:.82rem;margin-bottom:18px}
+    .hero-btns{gap:10px}
+    .btn-mag{padding:12px 22px;font-size:.74rem}
     .hero-stats-col{gap:8px}
-    .hero-stat{padding:10px 12px;min-width:80px}
-    .hs-num{font-size:1.1rem}
+    .hero-stat{padding:12px 8px;border-radius:10px}
+    .hs-num{font-size:1.2rem}
+    .hs-label{font-size:.5rem}
     .hero-tag span{font-size:.65rem;letter-spacing:.2em}
     .hero-type-wrap{font-size:.78rem}
+
+    /* Skills — 4 columns on small phones */
+    .hscroll-wrap{padding:0 16px}
+    .skill-panel{padding:20px}
+    .sp-grid{grid-template-columns:repeat(4,1fr);gap:8px}
+    .ring-svg{width:44px;height:44px}
+    .sp-ring-wrap{width:44px;height:44px}
+    .sp-icon{width:14px;height:14px}
+    .sp-name{font-size:.52rem}
+    .sp-num{font-size:1.5rem}
+    .sp-header h3{font-size:.95rem}
+
+    .sec-head{flex-direction:column;align-items:flex-start;gap:10px}
+    .sec-line{width:100%}
     .sec{padding:60px 0}
     .sec-head{margin-bottom:40px}
     .exp-card-inner{padding:20px 16px}
@@ -402,13 +425,28 @@ body.loaded .mouse-glow{display:block}
 }
 @media(max-width:360px){
     .hero-line{font-size:1.8rem}
-    .container{padding:0 16px}
-    .hero-inner{padding:0 16px}
-    .sp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-    .ring-svg{width:48px;height:48px}
-    .sp-ring-wrap{width:48px;height:48px}
-    .hero-stats-col{flex-direction:column;gap:8px}
-    .hero-stat{min-width:100%}
+    .container{padding:0 14px}
+    .hero-inner{padding:0 14px;gap:20px}
+    .hero-desc{font-size:.78rem;line-height:1.6}
+    .btn-mag{padding:11px 18px;font-size:.72rem}
+    .hero-stats-col{gap:6px}
+    .hero-stat{padding:10px 6px;border-radius:8px}
+    .hs-num{font-size:1rem}
+    .hs-label{font-size:.45rem}
+
+    /* Skills — 3 columns on very small phones */
+    .hscroll-wrap{padding:0 14px}
+    .skill-panel{padding:16px;gap:14px}
+    .sp-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+    .ring-svg{width:40px;height:40px}
+    .sp-ring-wrap{width:40px;height:40px}
+    .sp-icon{width:12px;height:12px}
+    .sp-name{font-size:.48rem}
+    .sp-num{font-size:1.3rem}
+    .sp-header h3{font-size:.88rem}
+    .tool-chip{padding:6px 12px;font-size:.68rem}
+    .cert-item{padding:10px 12px}
+    .cert-item span{font-size:.7rem}
 }
 
 /* ===== REDUCED MOTION ===== */
