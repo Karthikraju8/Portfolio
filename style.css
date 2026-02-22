@@ -355,13 +355,15 @@ body.loaded .mouse-glow{display:block}
     .hscroll-track{display:flex;flex-direction:column;width:100%!important;transform:none!important;gap:20px}
     .skill-panel{width:100%!important;flex-direction:column;padding:24px;gap:20px;min-height:auto;background:var(--bg2);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-md)}
     .sp-header{min-width:auto;display:flex;align-items:center;gap:16px}
+    .sp-header h3 br{display:none}
     .sp-num{font-size:1.8rem;line-height:1}
     .sp-header h3{font-size:1.05rem;margin-top:0}
-    .sp-grid{grid-template-columns:repeat(5,1fr);gap:10px}
+    .sp-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 12px}
+    .sp-item{width:52px;gap:6px}
     .ring-svg{width:48px;height:48px}
-    .sp-ring-wrap{width:48px;height:48px}
+    .sp-ring-wrap{width:48px;height:48px;margin:0 auto}
     .sp-icon{width:16px;height:16px}
-    .sp-name{font-size:.58rem;margin-top:2px}
+    .sp-name{font-size:.56rem;margin-top:0;text-align:center;width:100%;word-break:break-word;white-space:normal;line-height:1.2}
     .sp-tool-row{gap:8px}
     .tool-chip{padding:8px 16px;font-size:.72rem}
     .cert-item{padding:12px 14px;border-radius:10px}
@@ -403,14 +405,15 @@ body.loaded .mouse-glow{display:block}
     .hero-tag span{font-size:.65rem;letter-spacing:.2em}
     .hero-type-wrap{font-size:.78rem}
 
-    /* Skills — 4 columns on small phones */
+    /* Skills — smaller on small phones */
     .hscroll-wrap{padding:0 16px}
     .skill-panel{padding:20px}
-    .sp-grid{grid-template-columns:repeat(4,1fr);gap:8px}
+    .sp-grid{gap:12px 10px}
+    .sp-item{width:48px}
     .ring-svg{width:44px;height:44px}
-    .sp-ring-wrap{width:44px;height:44px}
+    .sp-ring-wrap{width:44px;height:44px;margin:0 auto}
     .sp-icon{width:14px;height:14px}
-    .sp-name{font-size:.52rem}
+    .sp-name{font-size:.5rem}
     .sp-num{font-size:1.5rem}
     .sp-header h3{font-size:.95rem}
 
@@ -434,14 +437,15 @@ body.loaded .mouse-glow{display:block}
     .hs-num{font-size:1rem}
     .hs-label{font-size:.45rem}
 
-    /* Skills — 3 columns on very small phones */
+    /* Skills — smaller on tiny phones */
     .hscroll-wrap{padding:0 14px}
     .skill-panel{padding:16px;gap:14px}
-    .sp-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+    .sp-grid{gap:10px 8px}
+    .sp-item{width:44px}
     .ring-svg{width:40px;height:40px}
-    .sp-ring-wrap{width:40px;height:40px}
+    .sp-ring-wrap{width:40px;height:40px;margin:0 auto}
     .sp-icon{width:12px;height:12px}
-    .sp-name{font-size:.48rem}
+    .sp-name{font-size:.46rem}
     .sp-num{font-size:1.3rem}
     .sp-header h3{font-size:.88rem}
     .tool-chip{padding:6px 12px;font-size:.68rem}
