@@ -86,10 +86,13 @@
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: 'vertical',
             smoothWheel: true,
-            touchMultiplier: 1.5
+            touchMultiplier: 1.5,
+            syncTouch: true
         });
 
-        lenis.on('scroll', ScrollTrigger.update);
+        lenis.on('scroll', () => {
+            ScrollTrigger.update();
+        });
 
         gsap.ticker.add((time) => {
             lenis.raf(time * 1000);
@@ -200,18 +203,12 @@
         scene.add(ring2);
 
         let targetRotX = 0, targetRotY = 0;
-        let scrollY = 0;
 
         function onMouseMove(e) {
             targetRotY = (e.clientX / w - 0.5) * 0.8;
             targetRotX = (e.clientY / h - 0.5) * 0.5;
         }
         if (!isMobile) window.addEventListener('mousemove', onMouseMove);
-
-        // Scroll-based parallax for 3D
-        window.addEventListener('scroll', () => {
-            scrollY = window.scrollY;
-        });
 
         function onResize() {
             const nw = window.innerWidth;
@@ -249,11 +246,6 @@
 
             ring.rotation.z += 0.002;
             ring2.rotation.z -= 0.0015;
-
-            // Scroll parallax
-            const scrollPct = scrollY / window.innerHeight;
-            camera.position.y = -scrollPct * 1.5;
-            camera.position.z = 6 + scrollPct * 2;
 
             renderer.render(scene, camera);
         }
@@ -424,10 +416,17 @@
        =========================================== */
     function initScrollProg() {
         const bar = document.getElementById('scroll-prog');
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            bar.style.width = p + '%';
-        });
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    bar.style.width = p + '%';
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
     }
 
     /* ===========================================
@@ -461,7 +460,6 @@
        GSAP SCROLL ANIMATIONS — MORE IMPRESSIVE
        =========================================== */
     function initScrollAnims() {
-        gsap.registerPlugin(ScrollTrigger);
 
         // Section headers - slide in with stagger
         gsap.utils.toArray('.sec-head').forEach(h => {
@@ -683,26 +681,11 @@
             duration: 0.6, ease: 'back.out(1.7)', delay: 0.2
         });
 
-        // Parallax blobs on scroll
-        gsap.utils.toArray('.blob, .hero-blob-1, .hero-blob-2, .hero-blob-3').forEach((blob, i) => {
-            const speed = (i + 1) * 0.15;
-            gsap.to(blob, {
-                y: () => -window.innerHeight * speed,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: blob.closest('.sec') || blob.parentElement,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1.5
-                }
-            });
-        });
-
-        // Marquee bands parallax
-        gsap.utils.toArray('.marquee-band').forEach((band, i) => {
+        // Marquee bands fade in
+        gsap.utils.toArray('.marquee-band').forEach((band) => {
             gsap.from(band, {
                 scrollTrigger: { trigger: band, start: 'top 95%' },
-                opacity: 0, y: 20, duration: 0.6, ease: 'power3.out'
+                opacity: 0, duration: 0.6, ease: 'power3.out'
             });
         });
     }
@@ -784,6 +767,7 @@
        INIT
        =========================================== */
     function init() {
+        gsap.registerPlugin(ScrollTrigger);
         initPreloader();
         initLenis();
         initThree();
